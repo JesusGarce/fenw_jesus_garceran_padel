@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Villaescusa Club Padel</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/navbar-fixed-left.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<!-- The Modal -->
+<!-- The Modal -->
+<div id="idLogin" class="modal">
+  <span onclick="$('#idLogin')[0].style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+
+    <!-- Modal Content -->
+    <div class="modal-content animate">
+        <div class="imgcontainer">
+            <img src="img/logo_small.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label id="lbl_uname"><b>Usuario</b></label>
+            <input type="text" placeholder="Escribe tu usuario" name="uname" id="txt_uname" required>
+
+            <label id="lbl_pwd"><b>Contraseña</b></label>
+            <input type="password" placeholder="Escribe tu contraseña" name="psw" id="txt_pwd" required>
+
+            <p id="loginResponse"></p>
+
+            <button type="submit" id="but_submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" id="rememberLogin" name="remember"> Recuerdame
+            </label>
+        </div>
+
+        <div class="container">
+            <button type="button" onclick="$('#idLogin')[0].style.display='none'" class="cancelbtn">
+                Cancelar
+            </button>
+            <span class="psw">Has olvidado tu <a href="#">contraseña?</a></span>
+        </div>
+    </div>
+</div>
+
+<!-- Sign up modal -->
+<div id="idSignIn" class="modal">
+  <span onclick="$('#idSignIn')[0].style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+
+    <!-- Modal Content -->
+    <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+            <img src="img/logo_small.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Usuario</b></label>
+            <input type="text" placeholder="Escribe usuario" name="uname" required>
+
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Escribe contraseña" name="psw" required>
+
+            <label for="pswConfirm"><b>Confirma contraseña</b></label>
+            <input type="password" placeholder="Confirma contraseña" name="pswConfirm" required>
+
+            <label for="email"><b>E-mail</b></label>
+            <input type="email" placeholder="Escribe e-mail" name="email" required>
+
+            <label for="birthDate"><b>Fecha de nacimiento</b></label>
+            <input type="date" placeholder="Escribe Fecha de nacimiento" name="birthDate" required>
+
+            <label for="tlf"><b>Teléfono</b></label>
+            <input type="number" placeholder="Escribe teléfono" name="tlf" required>
+
+            <button type="submit">Registrarme</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Acepto términos y condiciones
+            </label>
+        </div>
+
+        <div class="container">
+            <button type="button" onclick="$('#idSignIn')[0].style.display='none'" class="cancelbtn">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-left" id="mainNav">
+    <a class="navbar-brand" href="index.html"><img src="img/logo_small.png"></a>
+    <button class="navbar-toggler navbar-toggler-collapse" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="btn-group" data-toggle="buttons" id="userButtons">
+                <button type="button" class="btn btn-outline-light" onclick="$('#idLogin')[0].style.display='block'"><i
+                        class="fas fa-user"></i>Login
+                </button>
+                <button type="button" class="btn btn-primary" onclick="$('#idSignIn')[0].style.display='block'"><i
+                        class="fas fa-sign-in-alt"></i>Registro
+                </button>
+            </div>
+            <ul class="navbar-nav ml-auto" id="navbarList">
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link active py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="servicios.html">Servicios</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="instalaciones.html">Instalaciones</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header>
+
+    <div class="masthead">
+        <h1 class="my-4">Nuestros <strong>servicios</strong></h1>
+        <p><span>Todo lo que te ofrecemos</span></p>
+    </div>
+
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top" src="img/clases.jpg" style="height:30%; width:100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Clases</h4>
+                        <p class="card-text">El conjunto de monitores maás cualificados se encargará de darte la
+                            formación en cuanto a técnica requerida en este deporte.
+                            Las clases prácticas te permitirán interiorizar los movimientos adecuados como si fuesen
+                            naturales.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Informate aquí</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top" src="img/entrenamientos.jpg" style="height:30%; width:100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Entrenamientos personalizados</h4>
+                        <p class="card-text">Si te sientes un campeón, de verdad lo eres o simplemente quieres avanzar
+                            rápidamente en la técnica que rodea a este deporte te podemos configurar sesiones
+                            de entrenamiento a tu medida con un entrenador personal que se encargará de mejorar tu
+                            calidad. </p>
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Informate aquí</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top" src="img/torneos.jpg" style="height:30%; width:100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Campeonatos</h4>
+                        <p class="card-text">El club organiza campeonatos periódicos en lo que te puedes divertir al
+                            mismo tiempo que mejoras en el deporte. Tenemos campeonatos en un día, de fin de semana y de
+                            ligas regulares.
+                            Puede participar en los torneos masculinos, femeninos y mixtos.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">Informate aquí</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Our Customers -->
+        <h2>Nuestros clientes</h2>
+        <div class="container cf">
+            <!-- testimonial one -->
+            <div class="animation-element slide-left testimonial">
+                <div class="header">
+                    <div class="left">
+                        <img src="img/face_test.png"/>
+                    </div>
+                    <div class="right">
+                        <h4>Jesús Garcerán</h4>
+                    </div>
+                </div>
+                <div class="content"><i class="fa fa-quote-left"></i> Soy un jugador aficionado y este club me encanta.
+                    Todo lo que se sobre pádel lo he aprendido aquí <i class="fa fa-quote-right"></i>
+                </div>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+            <!--testimonial two -->
+            <div class="animation-element slide-left testimonial">
+                <div class="header">
+                    <div class="left">
+                        <img src="img/face3.jpeg"/>
+                    </div>
+                    <div class="right">
+                        <h4>Alicia Chacón</h4>
+                    </div>
+                </div>
+                <div class="content"><i class="fa fa-quote-left"></i> Los profesores aquí son super profesionales. Es un
+                    club en el que te sientes como en casa <i class="fa fa-quote-right"></i>
+                    <i class="fa fa-quote-right"></i>
+                </div>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+            <!--testimonial three -->
+            <div class="animation-element slide-left testimonial">
+                <div class="header">
+                    <div class="left">
+                        <img src="img/face_2.jpg"/>
+                    </div>
+                    <div class="right">
+                        <h4>Francisco Pérez</h4>
+                    </div>
+                </div>
+                <div class="content"><i class="fa fa-quote-left"></i> Las mejores pistas de pádel de la zona, sin duda.
+                    Y además son económicas, no se puede pedir más.
+                    <i class="fa fa-quote-right"></i>
+                </div>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+            <!--testimonial four -->
+            <div class="animation-element slide-left testimonial">
+                <div class="header">
+                    <div class="left">
+                        <img src="img/face4.jpg"/>
+                    </div>
+                    <div class="right">
+                        <h4>Susana Villa</h4>
+                    </div>
+                </div>
+                <div class="content"><i class="fa fa-quote-left"></i> El pádel es mi deporte favorito y este es el mejor
+                    club de la zona donde practicarlo <i class="fa fa-quote-right"></i>
+                    <i class="fa fa-quote-right"></i>
+                </div>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+
+</div>
+<!-- /.container -->
+
+<!-- /.row -->
+<!-- Features Section -->
+<div class="carousel slide text-white" id="quienesSomos">
+    <div class="container">
+        <h1 class="my-4">Quienes somos</h1>
+        <div class="row">
+
+            <div class="col-lg-6">
+                <h3>Villaescusa Sport S.L.</h3>
+                <ul>
+                    <li class="li-quienesSomos"><i class="fas fa-map-marker-alt"></i> Calle Sierra de la Muela, 2, 30730
+                    </li>
+                    <li class="li-quienesSomos">San Javier, Murcia, España</li>
+                    <li class="li-quienesSomos"><i class="fas fa-phone-alt"></i>968 19 32 77</li>
+                    <li class="li-quienesSomos"><i class="far fa-envelope"></i>info@villaescusasport.com</li>
+                </ul>
+                <p>
+                    <a href="#"> <i class="fab fa-facebook-square fa-2x"></i> </a>
+                    <a href="#"> <i class="fab fa-twitter-square fa-2x"></i> </a>
+                    <a href="#"> <i class="fab fa-youtube-square fa-2x"></i> </a>
+                    <a href="#"> <i class="fab fa-instagram fa-2x"></i> </a>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.198497846886!2d-0.8459985843875927!3d37.8088193179724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd630df7267d3b85%3A0x5a90cfb731a5ade3!2sVillaescusa%20Sport!5e0!3m2!1sen!2ses!4v1573068685304!5m2!1sen!2ses"
+                        width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+
+<!-- Footer -->
+<footer class="py-5 bg-white">
+    <div class="container">
+        <p class="m-0 text-center">Copyright &copy; Villaescusa Sport 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/template.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
