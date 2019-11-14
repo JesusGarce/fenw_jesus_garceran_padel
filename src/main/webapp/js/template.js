@@ -2,6 +2,7 @@
 var modalLogin = $('#idLogin')[0];
 var modalSignIn = $('#idSignIn')[0];
 var loginResponse = $('#loginResponse')[0];
+var signInResponse = $('#signInResponse')[0];
 var username;
 
 var $animation_elements = $('.animation-element');
@@ -67,6 +68,38 @@ $().ready(function() {
             });
         }
     });
+
+    $("#sign_in_submit").click(function () {
+
+        var googleResponse = $('#g-recaptcha-response').val();
+
+        if (!googleResponse) {
+            signInResponse.innerText = "No hemos podido comprobar si eres o no un robot."
+            return false;
+        }
+
+       var username = $("#si_uname").val().trim();
+       var password = $("#si_psw").val().trim();
+       var confirm_password = $("#si_psw_confirm").val().trim();
+       var email = $("#si_email").val().trim();
+       var date_birth = $("#si_birth").val().trim();
+       var telephone = $("#si_tlf").val().trim();
+
+        console.log("password:"+ password + "| confirm password:"+confirm_password);
+        if(password != confirm_password) {
+            signInResponse.innerText = "Las contraseñas no coinciden";
+            return false;
+        }
+
+       if (username != "" && password != "" && confirm_password != "" && email != "" && date_birth != "" && telephone != "") {
+
+            // Hacer llamada
+        }
+        else {
+            return false;
+       }
+    });
+
     checkLocalStorage();
 });
 

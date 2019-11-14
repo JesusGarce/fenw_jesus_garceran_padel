@@ -14,7 +14,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
     <link href="css/navbar-fixed-left.min.css" rel="stylesheet">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
@@ -69,27 +69,33 @@
         </div>
 
         <div class="container">
-            <label for="si_uname"><b>Usuario</b></label>
-            <input type="text" placeholder="Escribe usuario" name="uname" required>
+            <label id="lbl_si_uname"><b>Usuario</b></label>
+            <input type="text" placeholder="Escribe usuario" id="si_uname" required>
 
-            <label for="si_psw"><b>Contraseña</b></label>
-            <input type="password" placeholder="Escribe contraseña" name="psw" required>
+            <label id="lbl_psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Escribe contraseña" id="si_psw" pattern="(?=.*\d)(?=.*[\W_]).{7,}" title="La contraseña debe tener como mínimo 8 caracteres, un número y un caracter especial." required>
 
-            <label for="si_psw_confirm"><b>Confirma contraseña</b></label>
-            <input type="password" placeholder="Confirma contraseña" name="pswConfirm" required>
+            <label id="lbl_psw_confirm"><b>Confirma contraseña</b></label>
+            <input type="password" placeholder="Confirma contraseña" id="si_psw_confirm" pattern="(?=.*\d)(?=.*[\W_]).{7,}" title="La contraseña debe tener como mínimo 8 caracteres, un número y un caracter especial." required>
 
-            <label for="si_email"><b>E-mail</b></label>
-            <input type="email" placeholder="Escribe e-mail" name="email" required>
+            <label id="lbl_email"><b>E-mail</b></label>
+            <input type="email" placeholder="Escribe e-mail" id="si_email" required>
 
-            <label for="si_birth"><b>Fecha de nacimiento</b></label>
-            <input type="date" placeholder="Escribe fecha de nacimiento" name="birthDate" required min="1930-01-01" max="2009-01-01">
+            <label id="lbl_birth"><b>Fecha de nacimiento</b></label>
+            <input type="date" placeholder="Escribe fecha de nacimiento" id="si_birth" required min="1930-01-01" max="2009-01-01">
 
-            <label for="si_tlf"><b>Teléfono</b></label>
-            <input type="number" placeholder="Escribe teléfono" name="tlf" required>
+            <label id="lbl_tlf"><b>Teléfono</b></label>
+            <input type="number" placeholder="Escribe teléfono" id="si_tlf" required>
 
-            <button type="submit">Registrarme</button>
+            <div class="container" style="  width: 100%; text-align: center;">
+                <div class="g-recaptcha" data-sitekey="6Lf2kcIUAAAAAIHV8-9lVh5719NZRgYjK5h2F8VJ" data-callback="correctCaptcha" style=" display: inline-block;"></div>
+            </div>
+
+            <p id="signInResponse"></p>
+
+            <button type="submit" id="sign_in_submit">Registrarme</button>
             <label>
-                <input type="checkbox" checked="checked" name="remember" required> Acepto términos y condiciones
+                <input type="checkbox" value="no" name="remember" required> Acepto términos y condiciones
             </label>
         </div>
 
@@ -239,6 +245,8 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/template.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 </body>
 
